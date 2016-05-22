@@ -1,0 +1,12 @@
+1.0.1: First version of BookShop
+1.0.2:
+  - Created books,series,author,publisher,category,level Tables
+  - create_authors_table.php
+  - create_publishers_table.php
+  - create_categories_table.php
+  - create_levels_table.php
+  - create_series_table.php
+  - create_books_table.php
+1.0.3: 
+  - add tables seeders 
+  - SeedAllTables.php

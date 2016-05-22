@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: title
+        required: true
+
+    image:
+        label: image
+        required: true
+        type: fileupload
+        mode: image
+        
+    slug:
+        label: slug
+        required: true
+
+    price:
+        label: price
+        required: true
+
+    shortDescription:
+        label: short description
+
+    description:
+        label: description
