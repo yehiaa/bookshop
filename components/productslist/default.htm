@@ -53,10 +53,12 @@
                 </figcaption>
               </figure>                          
               <div class="aa-product-hvr-content">
-                <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-              </div>
+               <a><h5>{{book.level.name}}</h5></a>
+
+                <!-- <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a> -->
+                <!-- <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"> <span class="fa fa-exchange"></span></a> -->
+               <!--  <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a> -->
+                            </div>
             </li>
             {% endfor %}                                          
           </ul>
@@ -78,6 +80,16 @@
         <!-- single sidebar -->
 
         <div class="aa-sidebar-widget">
+          <h3>Level</h3>
+          <ul class="aa-catg-nav">
+            {% for level in __SELF__.levels %}
+            <li><a href="?level={{ level }}">{{ level }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+
+        <div class="aa-sidebar-widget">
           <h3>Category</h3>
           <div class="tag-cloud">
             {% for category in __SELF__.categories %}
@@ -86,14 +98,7 @@
           </div>
         </div>
 
-        <div class="aa-sidebar-widget">
-          <h3>Level</h3>
-          <ul class="aa-catg-nav">
-            {% for level in __SELF__.levels %}
-            <li><a href="?level={{ level }}">{{ level }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
+       
 
         <!-- single sidebar -->
 <!--         <div class="aa-sidebar-widget">
