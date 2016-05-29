@@ -24,10 +24,10 @@ class SeedAllTables extends Seeder
              Category::create(['name' => 'Category -- ' .$index, 'created_at' => $faker->dateTime() ]);
         }
 
-        // Level
-        // foreach (range(1, 20) as $index) {
-        //      Level::create(['name' => 'Level--' . $index, 'created_at' => $faker->dateTime(),]);
-        // }
+        //Level
+        foreach (range(1, 10) as $index) {
+             Level::create(['name' => 'Level--' . $index, 'created_at' => $faker->dateTime(),]);
+        }
 
         // publisher
         foreach (range(0, 10) as $index) {
@@ -142,9 +142,9 @@ class SeedAllTables extends Seeder
             'publishDate' => $faker->date('Y-m-d'),
             'shortDescription' => $faker->paragraph(2, true),
             'description' => $faker->paragraph(5, true),
-            'author_id' => Author::find(rand(1, 20))->id,
-            'publisher_id' => Publisher::find(rand(1, 20))->id,
-            'level_id' => Level::find(rand(1, 3))->id,
+            'author_id' => Author::find(rand(1, 10))->id,
+            'publisher_id' => Publisher::find(rand(1, 10))->id,
+            'level_id' => Level::find(rand(1, 10))->id,
             'category_id' => Category::find(rand(1, 10))->id,
             // 'series_id' => Category::find(rand(1, 20))->id,
             'ISBN'=> $faker->isbn13,
@@ -155,20 +155,20 @@ class SeedAllTables extends Seeder
 
         }
 
-        // series
-        // foreach (range(1, 20) as $index) {
+        //series
+        foreach (range(1, 20) as $index) {
 
-        //     $series = Series::create([
-        //         'title' => 'Series -----' . $index, 
-        //         'slug' => str_replace(' ', '-', 'Series -----' . $index),
-        //         'price'=> $faker->randomFloat(2, 100, 1000), 
-        //         'image' => $faker->imageUrl(250, 250, 'cats', true, 'Series'), 
-        //         'description' => $faker->paragraph(3, true),
-        //         'shortDescription' => $faker->paragraph(2, true) ]);
+            $series = Series::create([
+                'title' => 'Series -----' . $index, 
+                'slug' => str_replace(' ', '-', 'Series -----' . $index),
+                'price'=> $faker->randomFloat(2, 100, 1000), 
+                'image' => $faker->imageUrl(250, 250, 'cats', true, 'Series'), 
+                'description' => $faker->paragraph(3, true),
+                'shortDescription' => $faker->paragraph(2, true) ]);
 
 
-        //     Book::find( $index +40 )->update( ['series_id' => $series->id ] )  ;
-        // }
+            Book::find( $index +40 )->update( ['series_id' => $series->id ] )  ;
+        }
 
 
         // Tags
