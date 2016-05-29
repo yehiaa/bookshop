@@ -12,6 +12,7 @@ class CreateLevelsTable extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            // $table->integer('ordinal');
             $table->string('name')->unique();
             $table->timestamps();
         });
