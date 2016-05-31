@@ -20,14 +20,15 @@ class Book extends Model
         'ordinal' => 'integer',
         'slug' => 'required',
         'numberOfPages' => 'required|integer',
-        'price' => 'required',
+        'price' => 'required|numeric',
         'language' => 'required',
-        'ISBN' => 'integer',
+        'ISBN' => 'required',
         'publishDate' => 'required',
-        'author_id' => 'required',
-        'publisher_id' => 'required',
-        'level_id' => 'required',
-        'category_id' => 'required',
+
+        'author_id' => 'required|integer',
+        'publisher_id' => 'required|integer',
+        'level_id' => 'required|integer',
+        'category_id' => 'integer',
     ];
 
     /**
