@@ -13,6 +13,13 @@ class Author extends Model
      */
     public $table = 'acme_bookshop_authors';
 
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required|unique:acme_bookshop_authors',
+        'ordinal' => 'integer',
+    ];
+
     /**
      * @var array Guarded fields
      */

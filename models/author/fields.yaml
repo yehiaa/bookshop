@@ -5,3 +5,5 @@
 fields:
     name:
         label: name
+    ordinal:
+        label: ordinal

@@ -13,6 +13,13 @@ class Publisher extends Model
      */
     public $table = 'acme_bookshop_publishers';
 
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required|unique:acme_bookshop_publishers',
+        'ordinal' => 'integer',
+    ];
+
     /**
      * @var array Guarded fields
      */

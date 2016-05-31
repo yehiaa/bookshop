@@ -9,6 +9,10 @@ fields:
     title:
         label: title
         required: true
+
+    ordinal:
+        label: ordinal
+
     slug:
         label: slug
         required: true
@@ -63,8 +67,7 @@ fields:
         path: fields_level
 
     series:
-        label: series 
-        required: true
+        label: series
         type: partial
         path: fields_series
     

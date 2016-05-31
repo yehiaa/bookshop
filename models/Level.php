@@ -13,6 +13,13 @@ class Level extends Model
      */
     public $table = 'acme_bookshop_levels';
 
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required|unique:acme_bookshop_levels',
+        'ordinal' => 'integer',
+    ];
+
     /**
      * @var array Guarded fields
      */

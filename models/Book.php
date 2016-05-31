@@ -7,17 +7,28 @@ use Model;
  */
 class Book extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
 
-    public $rules = [
-        'title' => 'required',
-        'slug' => 'required',
-        'price' => 'required',
-    ];
     /**
      * @var string The database table used by the model.
      */
     public $table = 'acme_bookshop_books';
+
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'title' => 'required',
+        'ordinal' => 'integer',
+        'slug' => 'required',
+        'numberOfPages' => 'required|integer',
+        'price' => 'required',
+        'language' => 'required',
+        'ISBN' => 'integer',
+        'publishDate' => 'required',
+        'author_id' => 'required',
+        'publisher_id' => 'required',
+        'level_id' => 'required',
+        'category_id' => 'required',
+    ];
 
     /**
      * @var array Guarded fields

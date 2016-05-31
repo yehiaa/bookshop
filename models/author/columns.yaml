@@ -6,3 +6,5 @@ columns:
     name:
         label: name
         searchable: true
+    ordinal:
+        label: ordinal

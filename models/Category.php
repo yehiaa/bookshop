@@ -13,6 +13,13 @@ class Category extends Model
      */
     public $table = 'acme_bookshop_categories';
 
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required|unique:acme_bookshop_categories',
+        'ordinal' => 'integer',
+    ];
+
     /**
      * @var array Guarded fields
      */

@@ -7,6 +7,9 @@ fields:
         label: title
         required: true
 
+    ordinal:
+        label: ordinal
+
     image:
         label: image
         required: true

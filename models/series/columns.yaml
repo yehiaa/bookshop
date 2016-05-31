@@ -7,6 +7,9 @@ columns:
         label: title
         searchable: true
 
+    ordinal:
+        label: ordinal
+
     image:
         type: partial
         path: ~/plugins/acme/bookshop/models/series/_image.htm
