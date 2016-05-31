@@ -10,3 +10,6 @@
 1.0.3: 
   - add tables seeders 
   - SeedAllTables.php
+1.0.4: 
+  - add new nullable columns to all tables
+  - add_ordinal_column.php
