@@ -38,7 +38,7 @@ class HomeBlocksBooks extends ComponentBase
                 'default'           => 'title',
                 'type'              => 'dropdown',
                 'required'          => true,
-                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create']
+                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create', 'ordinal'=>'ordinal']
             ],
             'orderDirection' => [
                 'description'       => 'order direction ',

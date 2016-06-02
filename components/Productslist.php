@@ -49,7 +49,7 @@ class Productslist extends ComponentBase
                 'default'           => 'title',
                 'type'              => 'dropdown',
                 'required'          => true,
-                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create'],
+                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create', 'ordinal'=>'ordinal'],
                 'group'             => 'books',
 
             ],
@@ -105,7 +105,7 @@ class Productslist extends ComponentBase
     {
         // var_dump(\Request::all());
         // dd(\Request::all());
-        $orderBy    = $this->property('orderBy', 'name');
+        $orderBy    = $this->property('orderBy', 'title');
         $orderDir   = $this->property('orderDirection', 'asc');
 
         $this->booksQ = Book::orderBy($orderBy, $orderDir);
@@ -152,7 +152,7 @@ class Productslist extends ComponentBase
 
         if (\Request::has('orderBy')) {
             $orderBy = \Request::get('orderBy');
-            if (in_array($orderBy, ["title", "created_at", "price"] )) {
+            if (in_array($orderBy, ["title", "created_at", "price", "ordinal"] )) {
                 $this->booksQ->orderBy($orderBy);
             }
         }
@@ -174,27 +174,32 @@ class Productslist extends ComponentBase
 
     public function categories()
     {
-        return Category::lists('name');
+        $orderBy = "ordinal";
+        return Category::orderBy($orderBy)->orderBy("name")->lists('name');
     }
 
     public function levels()
     {
-        return Level::lists('name');
+        $orderBy = "ordinal";
+        return Level::orderBy($orderBy)->orderBy("name")->lists('name');
     }
 
     public function publishers()
     {
-        return Publisher::lists('name');
+        $orderBy = "ordinal";
+        return Publisher::orderBy($orderBy)->orderBy("name")->lists('name');
     }
 
     public function author()
     {
-        return Author::lists('name');
+        $orderBy = "ordinal";
+        return Author::orderBy($orderBy)->orderBy("name")->lists('name');
     }
 
     public function series()
     {
-        return Series::lists('name');
+        $orderBy = "ordinal";
+        return Series::orderBy($orderBy)->orderBy("title")->lists('title');
     }
 
 }

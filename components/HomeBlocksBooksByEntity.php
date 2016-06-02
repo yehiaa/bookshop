@@ -51,7 +51,7 @@ class HomeBlocksBooksByEntity extends ComponentBase
                 'type'              => 'dropdown',
                 'group'             => 'entity',
                 'required'          => true,
-                'options'          => ['name'=>'name', 'created_at'=>'date of create'],
+                'options'          => ['name'=>'name', 'created_at'=>'date of create', 'ordinal'=>'ordinal'],
             ],
             'orderEntityDirection' => [
                 'description'       => 'order direction ',
@@ -80,7 +80,7 @@ class HomeBlocksBooksByEntity extends ComponentBase
                 'default'           => 'title',
                 'type'              => 'dropdown',
                 'required'          => true,
-                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create'],
+                'options'          => ['title'=>'title', 'publishDate'=>'publish Date', 'created_at'=>'date of create', 'ordinal'=>'ordinal'],
                 'group'             => 'books',
 
             ],
