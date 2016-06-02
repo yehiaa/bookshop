@@ -28,6 +28,15 @@ class Publishers extends Controller
     {
         $checkedIds = post('checked');
         if ((is_array($checkedIds)) && (count($checkedIds) > 0)) {
+
+            $entites = Publisher::whereIn('id', $checkedIds)->get();
+
+            foreach ($entites as $entity) {
+                if ($entity->books->count()) {
+                    return \Flash::error("$entity->name has books , unable to delete!");
+                }
+            }
+            
             $deleted = Publisher::whereIn('id', $checkedIds)->delete();
             if (!$deleted) {
                 return \Flash::error('sorry publishers have\'nt  been deleted ?');

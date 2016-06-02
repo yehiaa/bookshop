@@ -28,6 +28,15 @@ class Levels extends Controller
     {
         $checkedIds = post('checked');
         if ((is_array($checkedIds)) && (count($checkedIds) > 0)) {
+
+            $entites = Level::whereIn('id', $checkedIds)->get();
+
+            foreach ($entites as $entity) {
+                if ($entity->books->count()) {
+                    return \Flash::error("$entity->name has books , unable to delete!");
+                }
+            }
+            
             $deleted = Level::whereIn('id', $checkedIds)->delete();
             if (!$deleted) {
                 return \Flash::error('sorry levels have\'nt  been deleted ?');

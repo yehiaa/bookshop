@@ -28,6 +28,15 @@ class Authors extends Controller
     {
         $checkedIds = post('checked');
         if ((is_array($checkedIds)) && (count($checkedIds) > 0)) {
+            
+            $authors = Author::whereIn('id', $checkedIds)->get();
+
+            foreach ($authors as $author) {
+                if ($author->books->count()) {
+                    return \Flash::error("$author->name has books , unable to delete!");
+                }
+            }
+
             $deleted = Author::whereIn('id', $checkedIds)->delete();
             if (!$deleted) {
                 return \Flash::error('sorry authors have\'nt  been deleted ?');

@@ -28,6 +28,15 @@ class Categories extends Controller
     {
         $checkedIds = post('checked');
         if ((is_array($checkedIds)) && (count($checkedIds) > 0)) {
+
+            $entites = Category::whereIn('id', $checkedIds)->get();
+
+            foreach ($entites as $entity) {
+                if ($entity->books->count()) {
+                    return \Flash::error("$entity->name has books , unable to delete!");
+                }
+            }
+
             $deleted = Category::whereIn('id', $checkedIds)->delete();
             if (!$deleted) {
                 return \Flash::error('sorry categories have\'nt  been deleted ?');

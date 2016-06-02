@@ -28,6 +28,15 @@ class Series extends Controller
     {
         $checkedIds = post('checked');
         if ((is_array($checkedIds)) && (count($checkedIds) > 0)) {
+
+            $entites = \Acme\Bookshop\Models\Series::whereIn('id', $checkedIds)->get();
+
+            foreach ($entites as $entity) {
+                if ($entity->books->count()) {
+                    return \Flash::error("$entity->title has books , unable to delete!");
+                }
+            }
+
             $deleted = \Acme\Bookshop\Models\Series::whereIn('id', $checkedIds)->delete();
             if (!$deleted) {
                 return \Flash::error('sorry series have\'nt  been deleted ?');
