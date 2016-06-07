@@ -25,10 +25,10 @@ class Book extends Model
         'ISBN' => 'required',
         'publishDate' => 'required',
 
-        'author_id' => 'required|integer',
-        'publisher_id' => 'required|integer',
-        'level_id' => 'required|integer',
-        'category_id' => 'integer',
+        // 'author_id' => 'required|integer',
+        // 'publisher_id' => 'required|integer',
+        // 'level_id' => 'required|integer',
+        // 'category_id' => 'integer',
     ];
 
     /**

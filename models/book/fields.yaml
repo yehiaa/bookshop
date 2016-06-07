@@ -42,31 +42,31 @@ fields:
         type: datepicker
         mode: date
 
-    author:
+    author_id:
         label: author 
         required: true
         type: partial
         path: fields_author
 
-    publisher:
+    publisher_id:
         label: publisher 
         required: true
         type: partial
         path: fields_publisher
 
-    category:
+    category_id:
         label: category 
         required: true
         type: partial
         path: fields_category
 
-    level:
+    level_id:
         label: level 
         required: true
         type: partial
         path: fields_level
 
-    series:
+    series_id:
         label: series
         type: partial
         path: fields_series
