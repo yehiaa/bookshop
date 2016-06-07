@@ -17,3 +17,6 @@
   - add new fields to book table width and height , has cd 
   - add_dimensions_to_book_table.php
   - add_hascd_to_book_table.php
+1.0.6:
+  - Create News Table
+  - create_news_table.php

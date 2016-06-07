@@ -110,6 +110,12 @@ class Plugin extends PluginBase
                     'url'         => Backend::url('acme/bookshop/series'),
                     'permissions' => ['acme.bookshop.*']
                 ],
+                 'news' => [
+                    'label'       => 'news',
+                    'icon'        => 'icon-copy',
+                    'url'         => Backend::url('acme/bookshop/news'),
+                    'permissions' => ['acme.bookshop.*']
+                ],
             ]
 
 
