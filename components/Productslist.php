@@ -108,7 +108,8 @@ class Productslist extends ComponentBase
         $orderBy    = $this->property('orderBy', 'title');
         $orderDir   = $this->property('orderDirection', 'asc');
 
-        $this->booksQ = Book::orderBy($orderBy, $orderDir);
+        // $this->booksQ = Book::orderBy($orderBy, $orderDir);
+        $this->booksQ = Book::orderBy("series_id")->orderBy("ordinal")->orderBy("title");
         $this->applyFilters();
     }
 
@@ -118,7 +119,7 @@ class Productslist extends ComponentBase
             $entityTerm = \Request::get('series');
             $entity = Series::where('title', 'like', $entityTerm)->first();
             if ($entity)
-                $this->booksQ->where("series_id", $entity->id);       
+                $this->booksQ->where("series_id", $entity->id);
 
         }elseif(\Request::has('level')){
             $entityTerm = \Request::get('level');
