@@ -10,12 +10,13 @@ fields:
         label: title
         required: true
 
+    slug:
+        label: slug
+
     ordinal:
         label: ordinal
 
-    slug:
-        label: slug
-        required: true
+
     image:
         label: image
         required: true
@@ -33,9 +34,21 @@ fields:
         label: language
         required: true
         type: dropdown
+
     ISBN:
         label: ISBN
         required: true
+
+    width:
+        label: width
+
+    height:
+        label: height
+
+    hasCd:
+        label: has cd
+        type: checkbox
+
     publishDate:
         label: publish date
         required: true

@@ -16,9 +16,9 @@ class Book extends Model
     use \October\Rain\Database\Traits\Validation;
 
     public $rules = [
-        'title' => 'required',
+        'title' => 'required|unique:acme_bookshop_books',
         'ordinal' => 'integer',
-        'slug' => 'required',
+        // 'slug' => 'required',
         'numberOfPages' => 'required|integer',
         'price' => 'required|numeric',
         'language' => 'required',
@@ -30,6 +30,11 @@ class Book extends Model
         // 'level_id' => 'required|integer',
         // 'category_id' => 'integer',
     ];
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = str_replace(' ', '-', $this->attributes['title'] );
+    }
 
     /**
      * @var array Guarded fields

@@ -10,6 +10,9 @@ columns:
         label: title
         searchable: true
 
+    slug:
+        label: slug
+
     ordinal:
         label: ordinal
 

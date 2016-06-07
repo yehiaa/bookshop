@@ -13,3 +13,7 @@
 1.0.4: 
   - add new nullable columns to all tables
   - add_ordinal_column.php
+1.0.5:
+  - add new fields to book table width and height , has cd 
+  - add_dimensions_to_book_table.php
+  - add_hascd_to_book_table.php
