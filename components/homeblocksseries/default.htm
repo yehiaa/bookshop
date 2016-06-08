@@ -5,36 +5,37 @@
                     <div class="aa-series-blog-area">
                       <h2>BOOK SERIES</h2>
                         <div class="row">                       
-                  {% for series in __SELF__.series %}
-                  <!-- single latest blog -->
-                     <div class="col-md-3">
-                        <div class="aa-series-blog-single">
-                            <div class="aa-series-img  img-circle">
-                                <a href="#">
-                                {% if series.image.getPath %}
-                                    <img src="{{series.image.getpath}}">
-                                {% else %}
-                                    <img src="{{'assets/img/electronics/electronic-1.png'|theme}}">
-                                {% endif %}
-                                </a>
-                           </div>
-                            <div class="aa-series-info">
-                                <h3 class="aa-series-title">
-                                  <a href="#">{{series.title}}</a>
-                                </h3>
-                                
+                          {% for series in __SELF__.series %}
+                          <!-- single latest blog -->
+                             <div class="col-md-3">
+                                <div class="aa-series-blog-single">
+                                    <div class="aa-series-img  img-circle">
+                                        <a href="#">
+                                        {% if series.image.getPath %}
+                                            <img src="{{series.image.getpath}}">
+                                        {% else %}
+                                            <img src="{{'assets/img/electronics/electronic-1.png'|theme}}">
+                                        {% endif %}
+                                        </a>
+                                   </div>
+                                    <div class="aa-series-info">
+                                        <h3 class="aa-series-title">
+                                          <a href="#">{{series.title}}</a>
+                                        </h3>
+                                        <p>{{series.shortDescription}}</p>
+                                        <!--<a href="#" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>-->
+                                 </div>
+                               </div>
+                             </div>                  
+                          {% endfor %}
+                        </div> 
+                        <div class="aa-browse-btn-container ">
+                        <a class="aa-browse-btn" href="#">Browse all Series <span class="fa fa-long-arrow-right"></span>
+                           </a>
+                           </div>                       
+                    </div>
 
-
-
-                                <p>{{series.shortDescription}}</p>
-                                <!--<a href="#" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>-->
-                                                           </div>
-                       </div>
-                     </div>                  
-                  {% endfor %}
-              </div>
-            </div>
+                </div>
            </div>
-        </div>
-    </div>
+       </div>
 </section>
