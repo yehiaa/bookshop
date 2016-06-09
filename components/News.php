@@ -15,13 +15,23 @@ class News extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'max' => [
+            'description'       => 'The most amount of news allowed',
+            'title'             => 'Max items',
+            'default'           => 3,
+            'type'              => 'string',
+            'validationPattern' => '^[0-9]+$',
+            'validationMessage' => 'The Max Items value is required and should be integer.'
+                        ],
+        ];
     }
 
 
     public function recentNews()
     {
-        return \Acme\BookShop\Models\News::orderBy("startDate", "desc")->limit(10)->get();
+        $max = $this->property('max', 3);
+        return \Acme\BookShop\Models\News::orderBy("startDate", "desc")->limit($max)->get();
     }
 
 }
