@@ -7,6 +7,9 @@ columns:
         label: title
         searchable: true
 
+    slug:
+        label: slug
+
     ordinal:
         label: ordinal
 
@@ -15,8 +18,6 @@ columns:
         path: ~/plugins/acme/bookshop/models/series/_image.htm
         sortable: false
 
-    slug:
-        label: slug
 
     price:
         label: price

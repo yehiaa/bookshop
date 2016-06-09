@@ -7,6 +7,9 @@ fields:
         label: title
         required: true
 
+    slug:
+        label: slug
+
     ordinal:
         label: ordinal
 
@@ -16,9 +19,7 @@ fields:
         type: fileupload
         mode: image
         
-    slug:
-        label: slug
-        required: true
+
 
     price:
         label: price

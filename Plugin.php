@@ -38,6 +38,7 @@ class Plugin extends PluginBase
             'Acme\BookShop\Components\HomeBlocksSeries' => 'seriesBLock',
             'Acme\BookShop\Components\HomeBlocksBooksByEntity' => 'booksByEntityBlock',
             'Acme\BookShop\Components\Productslist' => 'productsList',
+            'Acme\BookShop\Components\Serieslist' => 'seriesList',
             'Acme\BookShop\Components\News' => 'newsList',
         ];
     }
