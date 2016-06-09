@@ -14,8 +14,8 @@ class CreateNewsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('description');
-            $table->date('startDate')->nullable;
-            $table->date('endDate')->nullable;
+            $table->date('startDate')->nullable();
+            $table->date('endDate')->nullable();
 
 
             $table->timestamps();
