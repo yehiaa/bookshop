@@ -149,8 +149,13 @@ class Serieslist extends ComponentBase
     public function filteredSeries()
     {
         // $this->applyFilters();
+        $result = $this->seriesQ->paginate(12);
+        $all = \Request::all();
+        foreach ($all as $key => $value) {
+            $result->addQuery($key, $value);
+        }
 
-        return $this->seriesQ->paginate(12) ;
+        return $result;
     }
 
     public function categories()

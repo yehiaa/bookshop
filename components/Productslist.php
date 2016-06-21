@@ -169,8 +169,13 @@ class Productslist extends ComponentBase
     public function filteredBooks()
     {
         // $this->applyFilters();
+        $result = $this->booksQ->paginate(12);
+        $all = \Request::all();
+        foreach ($all as $key => $value) {
+            $result->addQuery($key, $value);
+        }
 
-        return $this->booksQ->paginate(12) ;
+        return $result; 
     }
 
     public function categories()
