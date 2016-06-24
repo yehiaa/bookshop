@@ -89,4 +89,5 @@ fields:
 
     description:
         label: description
+        type: richeditor 
 
